@@ -1,0 +1,10 @@
+pymongo
+addict
+python-dateutil
+pyexcel
+pyexcel-xlsx
+Faker==3.0.0
+peewee==3.12.0
+PyMySQL==0.9.3   
+sshtunnel
+pytz
