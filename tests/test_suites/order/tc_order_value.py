@@ -1,4 +1,4 @@
-from tests.bases.BaseTestCase import BaseTestCase
+from tests.bases.base_test_case import BaseTestCase
 from tests.helpers.time import epoch_time, time_in_past
 
 class TC_OrderValue(BaseTestCase):

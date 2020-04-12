@@ -1,4 +1,4 @@
-from tests.bases.BaseTestCase import BaseTestCase
+from tests.bases.base_test_case import BaseTestCase
 
 class TC_Salesman(BaseTestCase):
   def test_total(self):
