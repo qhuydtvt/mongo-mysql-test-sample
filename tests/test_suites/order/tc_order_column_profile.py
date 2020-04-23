@@ -1,7 +1,7 @@
 from tests.bases.base_test_case import BaseTestCase
 from tests.helpers.time import epoch_time, time_in_past
 
-class TC_OrderValue(BaseTestCase):
+class TC_OrderColumnProfile(BaseTestCase):
   def test_total_order_value(self):
     now = epoch_time()
     _1_last_month = epoch_time(time_in_past(4))

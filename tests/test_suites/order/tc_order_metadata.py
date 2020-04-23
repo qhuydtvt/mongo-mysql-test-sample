@@ -14,8 +14,6 @@ class TC_OrderMetadata(BaseTestCase):
       for column_meta_data in column_metadata_list
     }
 
-    print(columns_by_field)
-
     self.assertDictContainsSubset({
       'Type': 'varchar(255)',
       'Null': 'NO',
@@ -34,11 +32,12 @@ class TC_OrderMetadata(BaseTestCase):
   
   def test_contraints(self):
     query = f"""
-      SELECT CONSTRAINT_NAME, COLUMN_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
+      SELECT CONSTRAINT_NAME, COLUMN_NAME, REFERENCED_TABLE_NAME, REFERENCED_COLUMN_NAME
+      FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE
       WHERE CONSTRAINT_SCHEMA = '{self.report_db_name}'
       AND TABLE_NAME = 'lead'
     """
-
+    
     constraint_list = self.report_db_helper.find_all(query)
 
     contraint_list_by_native_column_name = {
@@ -69,6 +68,3 @@ class TC_OrderMetadata(BaseTestCase):
       'REFERENCED_TABLE_NAME': 'content',
       'REFERENCED_COLUMN_NAME': 'id',
     }, contraint_list_by_native_column_name['content_id'])
-
-
-
